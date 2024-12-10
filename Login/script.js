@@ -28,7 +28,7 @@ window.onload = function () {
         localStorage.removeItem("lastUsername"); // Remover usuário do cache
       }
       // Redirecionar para a página inicial (pode modificar a URL conforme necessário)
-      window.location.href = "/Menu/Menu.html";
+      window.location.href = "../Menu/Menu.html";
     } else {
       errorMessage.style.display = "block"; // Exibir mensagem de erro
     }
