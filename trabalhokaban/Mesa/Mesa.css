@@ -1,0 +1,263 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #e0f7fa; /* Azul claro */
+  color: #004d40; /* Verde escuro */
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #00796b; /* Verde escuro */
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  color: white;
+}
+
+#addTableButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #004d40; /* Verde escuro */
+  color: white;
+  cursor: pointer;
+}
+
+#tablesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.table-card {
+  background-color: #ffffff; /* Cor de fundo dos cards */
+  border: 1px solid #00796b; /* Borda verde escura */
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem;
+  width: 150px; /* Largura fixa para os cards */
+  text-align: center;
+  transition: transform 0.2s; /* Transição suave para a escala */
+}
+
+/* Efeito de escala ao passar o mouse sobre o card */
+.table-card:hover {
+  transform: scale(1.05); /* Aumenta o card em 5% */
+}
+
+/* Estilo do container dos botões */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Espaça os botões */
+  margin-top: 1rem; /* Espaço acima dos botões */
+}
+
+/* Estilo do botão de editar */
+.edit-button {
+  background-color: #4caf50; /* Verde */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 45%; /* Largura dos botões */
+}
+
+/* Estilo do botão de remover */
+.remove-button {
+  background-color: #f44336; /* Vermelho */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 45%; /* Largura dos botões */
+}
+/* Estilo do modal */
+.modal {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Permite scroll se necessário */
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+}
+
+.modal-content {
+  background-color: #ffffff; /* Fundo branco */
+  margin: 15% auto; /* 15% do topo e centralizado */
+  padding: 20px;
+  border: 1px solid #00796b; /* Borda verde escuro */
+  border-radius: 8px; /* Bordas arredondadas */
+  width: 100%; /* Largura do modal */
+  max-width: 800px; /* Largura máxima do modal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o modal */
+}
+
+h2 {
+  color: #00796b; /* Cor do título do modal */
+}
+
+label {
+  display: block; /* Faz os rótulos ficarem em blocos */
+  margin-top: 10px; /* Espaço acima dos rótulos */
+  font-weight: bold; /* Deixa os rótulos em negrito */
+}
+
+select,
+input[type="number"] {
+  width: 100%; /* Largura total dos campos */
+  padding: 10px; /* Espaçamento interno dos campos */
+  margin-top: 5px; /* Espaço acima dos campos */
+  border: 1px solid #00796b; /* Borda verde escuro */
+  border-radius: 4px; /* Bordas arredondadas */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra interna nos campos */
+}
+
+/* Estilo do botão de salvar */
+button[type="submit"] {
+  background-color: #00796b; /* Verde escuro */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 10px 15px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  margin-top: 10px; /* Espaço acima do botão */
+}
+
+button[type="submit"]:hover {
+  background-color: #005b48; /* Tom mais escuro ao passar o mouse */
+}
+
+.close-button-pedido {
+  background-color: #ff9306; /* Verde escuro */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 10px 15px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  margin-top: 10px; /* Espaço acima do botão */
+}
+
+.close-button-pedido:hover {
+  background-color: #bf6e04; /* Tom mais escuro ao passar o mouse */
+}
+
+.clean-button-pedido {
+  background-color: #ff0000; /* Verde escuro */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  padding: 10px 15px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  margin-top: 10px; /* Espaço acima do botão */
+}
+
+.clean-button-pedido:hover {
+  background-color: #a90404; /* Tom mais escuro ao passar o mouse */
+}
+
+/* Estilo do botão de fechar */
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo para o título da tabela */
+.orders-title {
+  font-size: 24px; /* Tamanho da fonte */
+  margin-bottom: 16px; /* Margem inferior */
+  text-align: center; /* Centraliza o texto */
+} /* Estilo do contêiner da tabela */
+.maxtable {
+  overflow-x: auto; /* Permite rolagem horizontal */
+  margin: 1rem; /* Margem para afastar do restante do conteúdo */
+  border-radius: 8px; /* Arredondamento nos cantos */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar o contêiner */
+}
+
+/* Estilo da tabela */
+.orders-table {
+  width: 100%; /* Largura total */
+  border-collapse: collapse; /* Colapsa as bordas */
+  table-layout: auto; /* Permite que as colunas se ajustem automaticamente */
+}
+
+/* Estilo do cabeçalho da tabela */
+.table-header {
+  background-color: #4caf50; /* Cor de fundo do cabeçalho */
+  color: white; /* Cor do texto do cabeçalho */
+}
+
+/* Estilo das células do cabeçalho */
+.header-row {
+  height: 50px; /* Altura da linha do cabeçalho */
+}
+
+.header-cell {
+  padding: 12px; /* Espaçamento interno */
+  text-align: left; /* Alinhamento à esquerda */
+  font-weight: bold; /* Negrito */
+  border-bottom: 2px solid #388e3c; /* Borda inferior mais espessa */
+}
+
+/* Estilo para o corpo da tabela */
+.table-body {
+  background-color: #f9f9f9; /* Cor de fundo das linhas */
+}
+
+/* Estilo para as linhas do corpo da tabela */
+.table-body tr:nth-child(even) {
+  background-color: #f2f2f2; /* Cor de fundo das linhas pares */
+}
+
+/* Estilo para as células do corpo */
+.table-body td {
+  padding: 10px; /* Espaçamento interno */
+  border: 1px solid #ddd; /* Borda das células */
+  text-align: left; /* Alinhamento à esquerda */
+}
+
+/* Estilo para o hover das células */
+.table-body tr:hover {
+  background-color: #ddd; /* Cor de fundo ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .header-cell,
+  .table-body td {
+    font-size: 12px; /* Tamanho menor para cabeçalhos e células */
+    padding: 6px; /* Diminui o padding */
+  }
+
+  h1 {
+    font-size: 24px; /* Menor tamanho de fonte para o título */
+  }
+
+  #addTableButton {
+    width: 90%; /* Botão ocupa toda a largura */
+    padding: 10px; /* Aumenta o padding */
+  }
+
+  .modal-content {
+    width: 80%; /* Largura da modal em telas pequenas */
+    overflow: auto;
+  }
+}

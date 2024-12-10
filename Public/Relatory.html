@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relatório - Restaurante A Taverna do Dragão</title>
+    <link rel="icon" href="assets/favicon.webp" type="image/x-icon" />
+    <link rel="stylesheet" href="Relatory.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-RcMk2XHSDtP4u/q49AWT/x8Wz9T8Vn4Ahp8fFcCNfu4DwoYGoIsOuv3ApD+hClEwZy0WWIAV0zInmkYh5M8XMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Restaurante A Taverna do Dragão</h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../privacidade.html">Política de Privacidade</a></li>
+          <li><a href="../servicos.html">Termos de Serviço</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section aria-labelledby="report-title">
+        <h2 id="report-title">Relatório de Pedidos</h2>
+
+        <label for="date-input">Buscar por Data:</label>
+        <input type="date" id="date-input" />
+        <button id="search-button">Buscar</button>
+
+        <table class="report-table" aria-describedby="report-description">
+          <caption id="report-description">
+            Lista de pedidos feitos no restaurante.
+          </caption>
+          <thead>
+            <tr>
+              <th>ID do Pedido</th>
+              <th>Cliente</th>
+              <th>Item</th>
+              <th>Status</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="5">Por favor, busque por uma data.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p class="footer">
+        &copy; 2024 Restaurante A Taverna do Dragão. Todos os direitos
+        reservados.
+      </p>
+      <nav>
+        <ul>
+          <li><a href="../privacidade.html">Política de Privacidade</a></li>
+          <li><a href="../servicos.html">Termos de Serviço</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+    <script src="ScriptRelatory.js" defer></script>
+    <script>
+      // Evento para buscar pedidos ao clicar no botão
+      document.getElementById("search-button").addEventListener("click", () => {
+        const dateInput = document.getElementById("date-input").value;
+        renderOrders(dateInput);
+      });
+    </script>
+  </body>
+</html>

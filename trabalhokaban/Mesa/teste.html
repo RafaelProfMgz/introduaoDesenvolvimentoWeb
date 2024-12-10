@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciador de Mesas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Inclua seu CSS aqui -->
+  </head>
+  <body>
+    <div id="app">
+      <h1>Gerenciador de Mesas</h1>
+      <button id="addTableButton">Adicionar Mesa</button>
+
+      <div id="tablesContainer"></div>
+
+      <!-- Modal de Edição -->
+      <div id="editModal" style="display: none">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Editar Mesa</h2>
+          <form id="editForm">
+            <label for="table-select">Selecione a Mesa:</label>
+            <select id="table-select"></select>
+
+            <label for="dish-type">Tipo de Prato:</label>
+            <select id="dish-type">
+              <option value="">Selecione</option>
+              <option value="peixe">Peixe</option>
+              <option value="prato">Prato Principal</option>
+              <option value="carne">Carne</option>
+            </select>
+
+            <div id="specific-dish-container" style="display: none">
+              <label for="specific-dish">Prato Específico:</label>
+              <select id="specific-dish"></select>
+            </div>
+
+            <div id="quantity-container" style="display: none">
+              <label for="quantity">Quantidade:</label>
+              <input type="number" id="quantity" min="1" />
+            </div>
+
+            <label for="side-select">Tipo de Acompanhamento:</label>
+            <select id="side-select">
+              <option value="">Selecione</option>
+              <option value="alcoólico">Alcoólico</option>
+              <option value="não alcoólico">Não Alcoólico</option>
+            </select>
+
+            <div id="beverage-container" style="display: none">
+              <label for="beverage">Bebida:</label>
+              <select id="beverage"></select>
+            </div>
+
+            <div id="beverage-quantity-container" style="display: none">
+              <label for="beverage-quantity">Quantidade de Bebidas:</label>
+              <input type="number" id="beverage-quantity" min="1" />
+            </div>
+
+            <button type="submit">Enviar Pedido</button>
+          </form>
+          <!-- Tabela para exibir pedidos -->
+          <h3>Pedidos:</h3>
+          <table id="ordersTable">
+            <thead>
+              <tr>
+                <th>Tipo de Prato</th>
+                <th>Prato Específico</th>
+                <th>Quantidade</th>
+                <th>Acompanhamento</th>
+                <th>Bebida</th>
+                <th>Quantidade de Bebidas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Linhas de pedidos serão adicionadas aqui -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="Mesa.js"></script>
+    <!-- Inclua seu JS aqui -->
+  </body>
+</html>
