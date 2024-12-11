@@ -1,38 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Carregar Banner.html
-  fetch("./Component/Banner/Banner.html")
+  // Carregar NavBar.html
+  fetch("../../Component/NavBar/NavBar.html")
     .then((response) => response.text())
     .then((data) => {
-      document.getElementById("banner").innerHTML = data;
+      document.getElementById("NavBar").innerHTML = data;
     })
     .catch((error) => {
-      console.error("Erro ao carregar o banner:", error);
+      console.error("Erro ao carregar a seção NavBar:", error);
     });
-
-  // Carregar Sobre.html
-  fetch("./Component/Sobre/Sobre.html")
+  // Carregar Formulario.html
+  fetch("../../Component/Formulario/Formulario.html")
     .then((response) => response.text())
     .then((data) => {
-      document.getElementById("sobre").innerHTML = data;
+      document.getElementById("Formulario").innerHTML = data;
     })
     .catch((error) => {
-      console.error("Erro ao carregar a seção Sobre:", error);
+      console.error("Erro ao carregar a seção formulario:", error);
     });
-
-
-  // Carregar Galeria.html
-  fetch("./Component/Galeria/Galeria.html")
+  // Carregar Contato.html
+  fetch("../../Component/Contato/Contato.html")
     .then((response) => response.text())
     .then((data) => {
-      document.getElementById("galeria").innerHTML = data;
-      carregarImagens();
+      document.getElementById("Contato").innerHTML = data;
     })
     .catch((error) => {
-      console.error("Erro ao carregar a seção Galeria:", error);
+      console.error("Erro ao carregar a seção Contato:", error);
+    });
+  // Carregar Footer.html
+  fetch("../../Component/Footer/Footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("Footer").innerHTML = data;
+    })
+    .catch((error) => {
+      console.error("Erro ao carregar a seção Footer:", error);
     });
 
   // Carregar Social.html
-  fetch("./Component/Social/Social.html")
+  fetch("../../Component/Social/Social.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("social").innerHTML = data;
@@ -43,24 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Função para carregar as imagens na galeria
-function carregarImagens() {
-  const imgElements = document.querySelectorAll(".bloco-imagem img");
-
-  imgElements.forEach((imgElement, index) => {
-    if (imgElement && imagePaths[index]) {
-      imgElement.src = imagePaths[index];
-      imgElement.alt = `Imagem ${index + 1}`;
-    }
-  });
-}
-
 // Função para carregar as imagens sociais
 function carregarImagensSocial() {
   const socialIcons = {
-    facebook: "./Assets/Facebook/Facebook.png",
-    instagram: "./Assets/Instagram/Instagram.png",
-    whatsapp: "./Assets/Whatsapp/Whatsapp.png",
+    facebook: "../../Assets/Facebook/Facebook.png",
+    instagram: "../../Assets/Instagram/Instagram.png",
+    whatsapp: "../../Assets/Whatsapp/Whatsapp.png",
   };
 
   const facebookIcon = document.getElementById("facebook-icon");
